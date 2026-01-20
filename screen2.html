@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Arcade Select</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: radial-gradient(circle at center, #111 0, #000 70%);
+        font-family: 'Courier New', monospace;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .container {
+        display: flex;
+        gap: 4rem;
+        z-index: 2;
+    }
+
+    .cabinet {
+        width: 300px;
+        height: 500px;
+        background: #111;
+        border-radius: 12px;
+        border: 4px solid #444;
+        box-shadow: 0 0 20px rgba(0,255,255,0.4);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+        position: relative;
+        transition: transform 0.2s ease;
+    }
+
+    .cabinet:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(0,255,255,0.7);
+        cursor: pointer;
+    }
+
+    .screen {
+        background: #000;
+        border: 3px solid #00f6ff;
+        height: 65%;
+        border-radius: 6px;
+        padding: 1rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+        box-shadow: inset 0 0 20px rgba(0,255,255,0.3);
+    }
+
+    .label {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        width: 40px;
+        height: 40px;
+        background: #ff0040;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(255,0,64,0.7);
+    }
+
+    .scanlines {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.04) 0px,
+            rgba(255,255,255,0.04) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+        opacity: 0.4;
+    }
+</style>
+</head>
+<body>
+
+<div class="scanlines"></div>
+
+<div class="container">
+
+    <!-- Cabinet 1 -->
+    <div class="cabinet" onclick="alert('Cabinet 1 selected!')">
+        <div class="screen">
+            <div>
+                <h3>PAGE ONE</h3>
+                <p>Content for the first page goes here.</p>
+            </div>
+        </div>
+        <div class="label">Cabinet One</div>
+        <div class="buttons">
+            <div class="btn"></div>
+            <div class="btn"></div>
+        </div>
+    </div>
+
+    <!-- Cabinet 2 -->
+    <div class="cabinet" onclick="alert('Cabinet 2 selected!')">
+        <div class="screen">
+            <div>
+                <h3>PAGE TWO</h3>
+                <p>Content for the second page goes here.</p>
+            </div>
+        </div>
+        <div class="label">Cabinet Two</div>
+        <div class="buttons">
+            <div class="btn"></div>
+            <div class="btn"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
